@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dki0mtrm82xb1"]
+
+[ext_resource type="AudioStream" uid="uid://bacvgd3skrvhc" path="res://Heroi Pixelado.mp3" id="1_ymobo"]
+
+[sub_resource type="AudioStream" id="AudioStream_s013s"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = SubResource("AudioStream_s013s")
+
+[node name="HeroiPixelado" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(491, 114)
+stream = ExtResource("1_ymobo")
+volume_db = 24.0
+autoplay = true

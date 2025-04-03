@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://byqfopvx44vwq"]
+
+[ext_resource type="AudioStream" uid="uid://c7h3lqycl4iq6" path="res://Lost_Woods_(From_Legend_of_Zelda_Ocarina_of_Time)_[_YouConvert.net_].mp3" id="1_ye0vw"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ye0vw")
+autoplay = true

@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp66y03t6v3po"]
+
+[ext_resource type="Script" path="res://scripts/intro_senac.gd" id="1_mobbi"]
+[ext_resource type="Texture2D" uid="uid://diw30x6jqgf32" path="res://sprites/fecomercio-ceara.png" id="2_tb5p4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iturj"]
+
+[sub_resource type="Animation" id="Animation_lhi7v"]
+resource_name = "Intro"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.03333, 3.33333, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g8vfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd033"]
+_data = {
+"Intro": SubResource("Animation_lhi7v"),
+"RESET": SubResource("Animation_g8vfj")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.13
+anchor_bottom = 0.092
+offset_right = -109.76
+offset_bottom = -19.616
+script = ExtResource("1_mobbi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -7.0
+offset_right = 1230.0
+offset_bottom = 683.0
+scale = Vector2(0.935248, 0.946527)
+texture = ExtResource("2_tb5p4")
+expand_mode = 1
+
+[node name="pular" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1034.0
+offset_top = 613.0
+offset_right = 1153.0
+offset_bottom = 644.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iturj")
+text = "pular"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cd033")
+}
+autoplay = "Intro"

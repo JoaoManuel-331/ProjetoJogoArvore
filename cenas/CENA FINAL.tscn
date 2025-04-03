@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqnw6m6ec48eb"]
+
+[ext_resource type="Texture2D" uid="uid://bfb8sjt856bjy" path="res://sprites/chaojm (1).png" id="1_fbyn5"]
+[ext_resource type="Script" path="res://scripts/VOLTAR2.gd" id="2_04jet"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykwta"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipgxw"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qfhvx"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_fbyn5")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 160.0
+offset_right = 798.0
+offset_bottom = 243.0
+text = "!!! PARABÉNS !!!"
+label_settings = SubResource("LabelSettings_ykwta")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 256.0
+offset_right = 788.0
+offset_bottom = 298.0
+text = "VOCÊ PEGOU MUITAS MAÇÃS"
+label_settings = SubResource("LabelSettings_ipgxw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_04jet")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 304.0
+offset_right = 654.0
+offset_bottom = 405.0
+alignment = 1
+
+[node name="JOGAR NOVAMENTE" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "JOGAR NOVAMENTE"
+icon = SubResource("ViewportTexture_qfhvx")
+
+[node name="SAIR" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "SAIR"
+
+[node name="CRÉDITOS" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "CRÉDITOS"

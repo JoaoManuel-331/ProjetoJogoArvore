@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://trh0ci24qp6b"]
+
+[ext_resource type="Script" path="res://scripts/esquilo.gd" id="1_d312u"]
+[ext_resource type="Texture2D" uid="uid://cshnqhkujfx4i" path="res://sprites/Esquilo.png" id="1_v1gjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r36g7"]
+atlas = ExtResource("1_v1gjr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sqe6"]
+atlas = ExtResource("1_v1gjr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_016ut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r36g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sqe6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ky3gg"]
+radius = 38.9639
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8u610"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vabg"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4eu5d"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 1, 0, 0)
+
+[node name="esquilo" type="CharacterBody2D"]
+position = Vector2(48, 84)
+script = ExtResource("1_d312u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.04117, 1.75)
+scale = Vector2(0.4375, 0.359375)
+sprite_frames = SubResource("SpriteFrames_016ut")
+autoplay = "default"
+frame_progress = 0.75487
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-22.5573, -10.2134)
+scale = Vector2(0.368404, 0.379586)
+polygon = PackedVector2Array(50, 41, 70, 41, 72, 39, 71, 38, 74, 36, 76, 36, 77, 35, 79, 33, 81, 33, 81, 20, 80, 18, 75, 18, 73, 19, 73, 24, 72, 26, 65, 23, 62, 21, 59, 18, 57.0864, 19.2, 53.7284, 19.2, 50.3704, 22.4, 47.0123, 22.4, 47.0123, 25.6, 47, 25, 47.0123, 25.6, 50.3704, 28.8, 52, 29, 50, 31, 50, 33, 52, 34, 54, 34, 56, 33, 58, 34, 60, 36, 59, 37, 52, 37, 50, 39)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1.04117, 1.75)
+scale = Vector2(0.4375, 0.359375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(3.32523, 3.69465)
+shape = SubResource("CircleShape2D_ky3gg")
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("CanvasItemMaterial_8u610")
+offset_left = -79.0
+offset_top = -60.0
+offset_right = 93.0
+offset_bottom = -12.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vabg")
+text = "Na moral, to com fome
+pega maçã para alimentar
+meus 27 filhotes"
+label_settings = SubResource("LabelSettings_4eu5d")
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

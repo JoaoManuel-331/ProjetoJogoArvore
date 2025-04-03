@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5tl4mhlhbqvd"]
+
+[ext_resource type="Texture2D" uid="uid://bfb8sjt856bjy" path="res://sprites/chaojm (1).png" id="1_sd278"]
+[ext_resource type="Script" path="res://scripts/descricao.gd" id="2_ainch"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pr4f4"]
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1152.0
+offset_bottom = 640.0
+texture = ExtResource("1_sd278")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.042
+anchor_bottom = 0.035
+offset_left = 24.0
+offset_top = 216.0
+offset_right = 1047.62
+offset_bottom = 373.6
+text = "DESCRIÇÃO E OBJETIVO DO JOGO:
+PEGUE A MAIOR QUANTIDADE DE MAÇÃS NO MENOR
+TEMPO POSSÍVEL PARA GANHAR"
+label_settings = SubResource("LabelSettings_pr4f4")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ainch")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 592.0
+offset_right = 1136.0
+offset_bottom = 1120.0
+
+[node name="VOLTAR" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "VOLTAR"
+
+[connection signal="pressed" from="Control/VBoxContainer/VOLTAR" to="Control" method="_on_voltar_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cci05n12aakfg"]
+
+[ext_resource type="Script" path="res://scripts/contator_de_macas.gd" id="1_4r6db"]
+
+[node name="Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_4r6db")

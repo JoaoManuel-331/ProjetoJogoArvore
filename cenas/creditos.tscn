@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn0jcv43lr4qj"]
+
+[ext_resource type="Script" path="res://scripts/VOLTAR.gd" id="2_ocajl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4chub"]
+font_size = 33
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1152.0
+offset_bottom = 648.0
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 259.0
+offset_bottom = 179.0
+text = "CRÉDITOS DO CRIADOR DO JOGO:
+JOÃO MANUEL
+
+
+
+
+
+
+
+
+
+
+OBRIGADO POR JOGAR."
+label_settings = SubResource("LabelSettings_4chub")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ocajl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 965.0
+offset_top = 589.0
+offset_right = 1128.0
+offset_bottom = 644.0
+
+[node name="VOLTAR" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "VOLTAR"
